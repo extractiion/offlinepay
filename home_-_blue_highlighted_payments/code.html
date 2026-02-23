@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offline UPI - Home Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB",
+                        "paper": "#F3EBDD",
+                        "ink": "#111318",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        "hard": "4px 4px 0px 0px #111318",
+                        "hard-sm": "2px 2px 0px 0px #111318",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F3EBDD;
+            background-image: radial-gradient(#111318 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .sharp-border {
+            border: 2px solid #111318;
+            border-radius: 0;
+        }
+        .btn-primary {
+            background-color: #111318;
+            color: white;
+            border: 2px solid #111318;
+            border-radius: 0;
+            box-shadow: 4px 4px 0px 0px #111318; 
+            box-shadow: 2px 2px 0px 0px #111318;
+            transition: all 0.1s ease-in-out;
+        }
+        .btn-primary:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px 0px #111318;
+        }
+        .btn-primary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #111318;
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #111318;
+            border: 2px solid #111318;
+            border-radius: 0;
+            box-shadow: 2px 2px 0px 0px #111318;
+            transition: all 0.1s ease-in-out;
+        }
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px 0px #111318;
+        }
+        .btn-secondary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #111318;
+        }
+        .card-brutal {
+            background-color: white;
+            border: 2px solid #111318;
+            border-radius: 0;
+            box-shadow: 4px 4px 0px 0px #111318;
+        }
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: #111318;
+            font-weight: 500;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563EB;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="font-display text-ink overflow-x-hidden flex flex-col min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b-2 border-ink bg-paper px-6 py-4 lg:px-20">
+<div class="flex items-center gap-3 text-ink">
+<div class="size-8 flex items-center justify-center bg-primary border-2 border-ink shadow-hard-sm">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">wifi_off</span>
+</div>
+<h2 class="text-xl font-black tracking-tighter uppercase">Offline<span class="text-primary">UPI</span></h2>
+</div>
+<div class="hidden lg:flex items-center gap-8">
+<a class="nav-link text-sm uppercase tracking-wide" href="#">Home</a>
+<a class="nav-link text-sm uppercase tracking-wide" href="#features">Features</a>
+<a class="nav-link text-sm uppercase tracking-wide" href="#security">Security</a>
+<a class="nav-link text-sm uppercase tracking-wide" href="#legal">Legal</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="btn-primary h-10 px-6 text-sm font-bold uppercase tracking-wider">
+                    Get App
+                </button>
+</div>
+</header>
+<main class="flex-grow flex flex-col">
+<section class="relative px-6 py-12 lg:px-20 lg:py-24 border-b-2 border-ink bg-paper">
+<div class="max-w-7xl">
+<div class="grid gap-12 items-center">
+<div class="flex flex-col gap-6 z-10 items-start text-left">
+<div class="inline-flex items-center gap-2 border-2 border-ink bg-white px-3 py-1 shadow-hard-sm">
+<span class="size-2 bg-red-500 animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-wide">Beta Access Live</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tighter uppercase">Offline UPI<br/>
+<span class="bg-primary text-white px-4 py-1 inline-block border-2 border-ink shadow-hard">Payments.</span><br/>
+No Internet.</h1>
+<p class="text-lg font-medium leading-relaxed max-w-lg border-l-4 border-primary pl-4">
+                                Send money securely using sound waves and NFC. Works when the cloud doesn't. No signal? No problem.
+                            </p>
+<div class="flex flex-wrap gap-4 mt-4 justify-start">
+<button class="btn-primary h-14 px-8 text-base font-bold uppercase flex items-center gap-2">
+<span>Get Early Access</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="btn-secondary h-14 px-8 text-base font-bold uppercase flex items-center gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+<span>Watch Demo</span>
+</button>
+</div>
+<div class="mt-8 flex items-center gap-4 text-sm font-bold opacity-75 justify-start">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Works on 2G</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Bank Grade Security</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-20 lg:pb-40 lg:pt-20 lg:px-20 bg-white border-b-2 border-ink" id="features">
+<div class="mx-auto max-w-7xl">
+<div class="flex flex-col lg:flex-row gap-12 mb-16 items-end">
+<div class="flex-1">
+<h2 class="text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-tight">
+                                Why Payments <span class="bg-primary text-white px-2">Fail?</span>
+</h2>
+<p class="mt-4 text-lg font-medium max-w-2xl border-l-4 border-ink pl-4">
+                                We solve the frustration of failed payments in low-network areas. Don't let bad signal stop your life.
+                            </p>
+</div>
+<div class="hidden lg:block">
+<span class="material-symbols-outlined text-6xl opacity-20">error_outline</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="card-brutal p-6 flex flex-col gap-4 hover:-translate-y-1 transition-transform cursor-default group">
+<div class="size-12 bg-primary border-2 border-ink flex items-center justify-center text-white group-hover:bg-ink transition-colors">
+<span class="material-symbols-outlined">signal_cellular_off</span>
+</div>
+<div>
+<h3 class="text-lg font-black uppercase mb-2">No Network Coverage</h3>
+<p class="text-sm font-medium leading-relaxed opacity-80">Payments fail when you are in a basement, elevator, or remote trekking area.</p>
+</div>
+</div>
+<div class="card-brutal p-6 flex flex-col gap-4 hover:-translate-y-1 transition-transform cursor-default group">
+<div class="size-12 bg-white border-2 border-ink flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<div>
+<h3 class="text-lg font-black uppercase mb-2">Server Downtime</h3>
+<p class="text-sm font-medium leading-relaxed opacity-80">Bank servers are often overloaded during peak hours leading to timeouts.</p>
+</div>
+</div>
+<div class="card-brutal p-6 flex flex-col gap-4 hover:-translate-y-1 transition-transform cursor-default group">
+<div class="size-12 bg-white border-2 border-ink flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<div>
+<h3 class="text-lg font-black uppercase mb-2">Slow Data Speeds</h3>
+<p class="text-sm font-medium leading-relaxed opacity-80">Edge or 2G networks can't handle the heavy payload of modern banking apps.</p>
+</div>
+</div>
+<div class="card-brutal p-6 flex flex-col gap-4 hover:-translate-y-1 transition-transform cursor-default group">
+<div class="size-12 bg-white border-2 border-ink flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">timer_off</span>
+</div>
+<div>
+<h3 class="text-lg font-black uppercase mb-2">Transaction Timeouts</h3>
+<p class="text-sm font-medium leading-relaxed opacity-80">Waiting for a spinning loader only to fail at the very end is frustrating.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t-2 border-ink bg-white px-6 py-12 lg:px-20">
+<div class="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="col-span-2 lg:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-primary border-2 border-ink"></div>
+<span class="font-black text-xl uppercase tracking-tighter">Offline UPI</span>
+</div>
+<p class="text-sm font-medium opacity-60">
+                        © 2023 Offline Pay Technologies.<br/>
+                        Designed for resilience.
+                    </p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-black uppercase mb-2">Product</h4>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">Download</a>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">Technology</a>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">Security</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-black uppercase mb-2">Company</h4>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">About Us</a>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">Careers</a>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-black uppercase mb-2">Legal</h4>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">Privacy Policy</a>
+<a class="text-sm font-medium hover:text-primary hover:underline" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

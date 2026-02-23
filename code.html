@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Android System Distribution - v2.4.0</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB",
+                        "paper": "#F3EBDD",
+                        "ink": "#111318",
+                        "paper-accent": "#f3eee5",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    boxShadow: {
+                        "hard": "4px 4px 0px 0px #111318",
+                        "hard-lg": "8px 8px 0px 0px #111318",
+                        "hard-sm": "2px 2px 0px 0px #111318",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .paper-crease {
+            background-color: #F3EBDD;
+            background-image: radial-gradient(#111318 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px #111318;
+        }
+
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px 0px #111318;
+        }
+
+        .crease-line {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.05);
+            pointer-events: none;
+        }
+
+        * {
+            border-radius: 0 !important;
+        }
+
+        .btn-primary {
+            background-color: #111318;
+            color: white;
+            border: 2px solid #111318;
+            border-radius: 0;
+            box-shadow: 4px 4px 0px 0px #111318;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 6px 6px 0px 0px #111318;
+        }
+
+        .btn-primary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #111318;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #111318;
+            border: 2px solid #111318;
+            border-radius: 0;
+            box-shadow: 2px 2px 0px 0px #111318;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px 0px #111318;
+        }
+
+        .btn-secondary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #111318;
+        }
+
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: #111318;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563EB;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        #mobile-menu {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+        }
+
+        #mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        @keyframes pageReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        main {
+            animation: pageReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-paper font-display text-slate-900 min-h-screen relative overflow-x-hidden paper-crease">
+    <div class="crease-line w-px h-full left-1/4 top-0 opacity-20"></div>
+    <div class="crease-line w-full h-px top-1/3 left-0 opacity-20"></div>
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+        <!-- Header -->
+        <header
+            class="sticky top-4 z-50 mx-4 lg:mx-20 flex items-center justify-between whitespace-nowrap border-2 border-ink bg-paper px-6 py-4 shadow-hard">
+            <div class="flex items-center gap-3 text-ink">
+                <div class="size-8 flex items-center justify-center bg-primary border-2 border-ink shadow-hard-sm">
+                    <span class="material-symbols-outlined text-white" style="font-size: 20px;">wifi_off</span>
+                </div>
+                <h2 class="text-xl font-black tracking-tighter uppercase">Offline<span class="text-primary">Pay</span>
+                </h2>
+            </div>
+            <nav class="hidden lg:flex items-center gap-8">
+                <a class="nav-link" href="index.html#home">Home</a>
+                <a class="nav-link" href="index.html#features">Features</a>
+                <a class="nav-link" href="index.html#legal">Security</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="code.html"
+                    class="btn-primary h-10 px-6 text-sm font-bold uppercase tracking-wider hidden sm:block flex items-center justify-center">
+                    Get App
+                </a>
+                <button class="lg:hidden text-ink" id="menu-toggle">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-[60] bg-paper flex-col items-center justify-center gap-8 p-10 border-b-2 border-ink">
+            <button class="absolute top-6 right-6" id="menu-close">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a class="nav-link text-2xl" href="index.html#home" onclick="closeMenu()">Home</a>
+            <a class="nav-link text-2xl" href="index.html#features" onclick="closeMenu()">Features</a>
+            <a class="nav-link text-2xl" href="index.html#legal" onclick="closeMenu()">Security</a>
+            <a href="code.html"
+                class="btn-primary h-14 w-full text-lg font-black uppercase mt-4 flex items-center justify-center">Download</a>
+        </div>
+
+        <div class="layout-container flex h-full grow flex-col">
+
+            <main class="mx-auto max-w-[960px] w-full px-6 pt-16 pb-10">
+                <nav class="flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-widest text-slate-600">
+                    <a class="hover:text-primary underline decoration-2 decoration-transparent hover:decoration-primary"
+                        href="#">Projects</a>
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                    <a class="hover:text-primary underline decoration-2 decoration-transparent hover:decoration-primary"
+                        href="#">Android</a>
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                    <span class="text-black">Releases</span>
+                </nav>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="border-2 border-black bg-white p-6 neo-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="material-symbols-outlined text-primary text-4xl">architecture</span>
+                                <span class="font-mono text-xs font-bold border border-black px-2 py-1">64-BIT</span>
+                            </div>
+                            <h4
+                                class="text-xl font-black mb-2 uppercase italic underline decoration-primary decoration-4 underline-offset-4">
+                                ARM v8a</h4>
+                            <p class="text-sm text-slate-600 mb-6">Optimized for modern Android hardware. Includes full
+                                instruction set support and enhanced memory management.</p>
+                        </div>
+                        <a href="https://github.com/MdFarhan0/offlineupi/releases"
+                            class="w-full bg-white text-black font-black border-2 border-black py-4 hover:bg-black hover:text-white transition-all group flex items-center justify-center gap-2">
+                            DOWNLOAD (.APK)
+                            <span
+                                class="material-symbols-outlined group-hover:translate-y-1 transition-transform">download</span>
+                        </a>
+                        <div class="mt-4 flex justify-between text-[10px] font-bold uppercase text-slate-400">
+                            <span>Size: 42.4 MB</span>
+                            <span>DL Count: 12.4k</span>
+                        </div>
+                    </div>
+                    <div class="border-2 border-black bg-white p-6 neo-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="material-symbols-outlined text-primary text-4xl">memory</span>
+                                <span class="font-mono text-xs font-bold border border-black px-2 py-1">32-BIT</span>
+                            </div>
+                            <h4
+                                class="text-xl font-black mb-2 uppercase italic underline decoration-primary decoration-4 underline-offset-4">
+                                ARM v7a</h4>
+                            <p class="text-sm text-slate-600 mb-6">Legacy support for older chipsets. Maintaining high
+                                compatibility with Android 5.0 through 11.0 devices.</p>
+                        </div>
+                        <a href="https://github.com/MdFarhan0/offlineupi/releases"
+                            class="w-full bg-white text-black font-black border-2 border-black py-4 hover:bg-black hover:text-white transition-all group flex items-center justify-center gap-2">
+                            DOWNLOAD (.APK)
+                            <span
+                                class="material-symbols-outlined group-hover:translate-y-1 transition-transform">download</span>
+                        </a>
+                        <div class="mt-4 flex justify-between text-[10px] font-bold uppercase text-slate-400">
+                            <span>Size: 38.1 MB</span>
+                            <span>DL Count: 8.9k</span>
+                        </div>
+                    </div>
+                </div>
+                <section class="mb-12">
+                    <h3 class="text-lg font-black uppercase mb-4 flex items-center gap-2">
+                        <span class="w-8 h-[2px] bg-primary"></span>
+                        Technical Specifications
+                    </h3>
+                    <div class="border-2 border-black bg-white overflow-hidden">
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr class="border-b-2 border-black">
+                                    <td class="p-4 font-bold bg-slate-50 border-r-2 border-black uppercase w-1/3">Target
+                                        API Level</td>
+                                    <td class="p-4 font-mono">34 (Android 14)</td>
+                                </tr>
+                                <tr class="border-b-2 border-black">
+                                    <td class="p-4 font-bold bg-slate-50 border-r-2 border-black uppercase">Min API
+                                        Level</td>
+                                    <td class="p-4 font-mono">21 (Android 5.0)</td>
+                                </tr>
+                                <tr class="border-b-2 border-black">
+                                    <td class="p-4 font-bold bg-slate-50 border-r-2 border-black uppercase">Signature
+                                        Algorithm</td>
+                                    <td class="p-4 font-mono">SHA256withRSA</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-bold bg-slate-50 border-r-2 border-black uppercase">Build
+                                        Variant</td>
+                                    <td class="p-4 font-mono text-primary font-bold">Release-Signed-Stable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="mb-20">
+                    <h3 class="text-lg font-black uppercase mb-4 flex items-center gap-2">
+                        <span class="w-8 h-[2px] bg-primary"></span>
+                        Installation Protocol
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div
+                            class="border-2 border-black bg-white p-6 relative group neo-shadow-sm hover:neo-shadow transition-all duration-200">
+                            <div
+                                class="absolute -top-3 -left-3 w-8 h-8 bg-primary border-2 border-black flex items-center justify-center text-white font-mono font-bold z-10">
+                                01</div>
+                            <div class="mt-4 mb-2">
+                                <span
+                                    class="material-symbols-outlined text-4xl mb-3 text-slate-800">settings_applications</span>
+                                <h4 class="font-black uppercase text-lg leading-tight mb-2">Allow Source</h4>
+                            </div>
+                            <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                                Navigate to system settings and enable installation from unknown sources for your
+                                browser.
+                            </p>
+                        </div>
+                        <div
+                            class="border-2 border-black bg-white p-6 relative group neo-shadow-sm hover:neo-shadow transition-all duration-200">
+                            <div
+                                class="absolute -top-3 -left-3 w-8 h-8 bg-black border-2 border-black flex items-center justify-center text-white font-mono font-bold z-10">
+                                02</div>
+                            <div class="mt-4 mb-2">
+                                <span class="material-symbols-outlined text-4xl mb-3 text-slate-800">downloading</span>
+                                <h4 class="font-black uppercase text-lg leading-tight mb-2">Run Installer</h4>
+                            </div>
+                            <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                                Open the downloaded .apk file from your notification bar or file manager to begin
+                                package extraction.
+                            </p>
+                        </div>
+                        <div
+                            class="border-2 border-black bg-white p-6 relative group neo-shadow-sm hover:neo-shadow transition-all duration-200">
+                            <div
+                                class="absolute -top-3 -left-3 w-8 h-8 bg-white border-2 border-black flex items-center justify-center text-black font-mono font-bold z-10">
+                                03</div>
+                            <div class="mt-4 mb-2">
+                                <span class="material-symbols-outlined text-4xl mb-3 text-slate-800">verified</span>
+                                <h4 class="font-black uppercase text-lg leading-tight mb-2">Verify &amp; Launch</h4>
+                            </div>
+                            <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                                Confirm permissions and wait for installation to complete. Launch via app drawer icon.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="border-t-2 border-black bg-white p-4">
+                <div class="mx-auto max-w-[960px] flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 bg-primary border border-black flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white" style="font-size: 10px;">wifi_off</span>
+                        </div>
+                        <span class="text-xs font-black uppercase">OfflinePay Documentation 2024</span>
+                    </div>
+                    <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest">
+                        <a class="hover:text-primary transition-colors" href="#">Developer Portal</a>
+                        <a class="hover:text-primary transition-colors" href="#">API Keys</a>
+                        <a class="hover:text-primary transition-colors" href="#">Legal</a>
+                    </div>
+                </div>
+            </footer>
+            <script>
+                const menuToggle = document.getElementById('menu-toggle');
+                const menuClose = document.getElementById('menu-close');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                menuClose.addEventListener('click', closeMenu);
+
+                function closeMenu() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

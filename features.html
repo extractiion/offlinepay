@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Offline UPI - Features</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB",
+                        "paper": "#F3EBDD",
+                        "ink": "#111318",
+                        "paper-accent": "#f3eee5",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        "hard": "4px 4px 0px 0px #111318",
+                        "hard-sm": "2px 2px 0px 0px #111318",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F3EBDD;
+            background-image: radial-gradient(#111318 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+
+        .btn-primary {
+            background-color: #111318;
+            color: white;
+            border: 2px solid #111318;
+            border-radius: 0;
+            box-shadow: 4px 4px 0px 0px #111318;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn-primary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #111318;
+        }
+
+        .card-brutal {
+            background-color: white;
+            border: 2px solid #111318;
+            box-shadow: 4px 4px 0px 0px #111318;
+        }
+
+        .pattern-dots {
+            background-image: radial-gradient(#111318 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: #111318;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563EB;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        #mobile-menu {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+        }
+
+        #mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-display text-ink min-h-screen flex flex-col">
+    <header
+        class="sticky top-4 z-50 mx-4 lg:mx-20 flex items-center justify-between border-2 border-ink bg-paper px-6 py-4 shadow-hard">
+        <a href="index.html" class="flex items-center gap-3 text-ink group">
+            <div
+                class="size-8 flex items-center justify-center bg-primary border-2 border-ink shadow-hard-sm group-hover:bg-ink transition-colors">
+                <span class="material-symbols-outlined text-white" style="font-size: 20px;">arrow_back</span>
+            </div>
+            <h2 class="text-xl font-black tracking-tighter uppercase">Back to <span class="text-primary">Home</span>
+            </h2>
+        </a>
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="size-8 flex items-center justify-center bg-primary border-2 border-ink shadow-hard-sm">
+                    <span class="material-symbols-outlined text-white" style="font-size: 20px;">wifi_off</span>
+                </div>
+                <h1 class="hidden sm:block text-xl font-black tracking-tighter uppercase">Offline<span
+                        class="text-primary">UPI</span></h1>
+            </div>
+            <button class="text-ink" id="menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-10">
+        <!-- Why Payment Fails Section -->
+        <section class="px-6 py-12 lg:px-20">
+            <div class="mx-auto max-w-7xl">
+                <div class="flex flex-col lg:flex-row gap-12 mb-16 items-end">
+                    <div class="flex-1">
+                        <h2 class="text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
+                            Why Payments <span class="bg-primary text-white px-2">Fail?</span>
+                        </h2>
+                        <p class="mt-6 text-xl font-medium max-w-2xl border-l-4 border-ink pl-4">
+                            Physical world issues meet legacy digital systems. We address the root causes of transaction
+                            friction.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card-brutal p-8 flex flex-col gap-6">
+                        <div class="size-16 bg-primary border-2 border-ink flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-3xl">signal_cellular_off</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-3">No Network</h3>
+                            <p class="font-medium opacity-80">Dead zones, elevators, and basements are the #1 cause of
+                                digital payment abandonment.</p>
+                        </div>
+                    </div>
+                    <div class="card-brutal p-8 flex flex-col gap-6">
+                        <div class="size-16 bg-white border-2 border-ink flex items-center justify-center text-ink">
+                            <span class="material-symbols-outlined text-3xl">dns</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-3">Server Lag</h3>
+                            <p class="font-medium opacity-80">Central banking switches experience 15% more timeouts
+                                during peak business hours.</p>
+                        </div>
+                    </div>
+                    <div class="card-brutal p-8 flex flex-col gap-6">
+                        <div class="size-16 bg-white border-2 border-ink flex items-center justify-center text-ink">
+                            <span class="material-symbols-outlined text-3xl">speed</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-3">Legacy Speed</h3>
+                            <p class="font-medium opacity-80">2G and Edge networks cannot maintain the secure handshake
+                                required for modern apps.</p>
+                        </div>
+                    </div>
+                    <div class="card-brutal p-8 flex flex-col gap-6">
+                        <div class="size-16 bg-white border-2 border-ink flex items-center justify-center text-ink">
+                            <span class="material-symbols-outlined text-3xl">timer_off</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-3">Timeouts</h3>
+                            <p class="font-medium opacity-80">Waiting for 30s only to see "Transaction Failed" destroys
+                                user trust in digital systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Proof Section -->
+        <section id="showcase" class="border-y-2 border-ink bg-paper-accent py-20 lg:py-32 overflow-hidden relative">
+            <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+                <span class="material-symbols-outlined text-[400px]">qr_code_scanner</span>
+            </div>
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">Simple Interface.</h2>
+                    <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-primary mt-2">Complex
+                        Tech.</h2>
+                </div>
+                <div class="flex flex-wrap justify-center gap-12">
+                    <!-- Screen Mockups from features layout -->
+                    <div class="bg-white border-2 border-ink p-2 shadow-hard transform rotate-[-2deg] w-[300px]">
+                        <div class="w-full aspect-[9/16] border-2 border-ink bg-paper flex flex-col overflow-hidden">
+                            <div class="bg-ink p-3 flex justify-between items-center text-white">
+                                <span class="material-symbols-outlined text-sm">menu</span>
+                                <span class="text-[10px] font-black tracking-widest">OFFLINE</span>
+                                <span class="material-symbols-outlined text-sm">wifi_off</span>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center justify-center p-4">
+                                <div
+                                    class="size-32 border-4 border-ink p-1 mb-6 bg-white flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-6xl">qr_code_2</span>
+                                </div>
+                                <div class="text-center">
+                                    <div class="font-black text-xl mb-1 uppercase">TAP TO PAY</div>
+                                    <div class="text-[10px] font-bold text-ink/50 uppercase">Proximity: Ready</div>
+                                </div>
+                            </div>
+                            <div class="p-4 border-t-2 border-ink bg-white">
+                                <div
+                                    class="h-10 bg-primary w-full border-2 border-ink flex items-center justify-center text-white font-black text-xs uppercase shadow-hard-sm">
+                                    Generate Token</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border-2 border-ink p-2 shadow-hard transform rotate-[2deg] w-[300px]">
+                        <div
+                            class="w-full aspect-[9/16] border-2 border-ink bg-green-500 flex flex-col overflow-hidden">
+                            <div class="flex-1 flex flex-col items-center justify-center p-6 text-white text-center">
+                                <div
+                                    class="size-20 border-4 border-white bg-white text-green-500 flex items-center justify-center mb-6 shadow-hard-sm">
+                                    <span class="material-symbols-outlined text-5xl font-black">check</span>
+                                </div>
+                                <div class="text-3xl font-black uppercase italic mb-2 tracking-tighter">Success!</div>
+                                <div class="text-xs font-bold uppercase tracking-wide opacity-90 mb-8">Offline
+                                    Transaction Signed</div>
+                                <div class="w-full border-2 border-white bg-white/10 p-4 backdrop-blur-sm">
+                                    <div class="flex justify-between text-[10px] font-black uppercase mb-2">
+                                        <span class="opacity-70">Amount</span>
+                                        <span>₹ 1,500</span>
+                                    </div>
+                                    <div class="flex justify-between text-[10px] font-black uppercase">
+                                        <span class="opacity-70">Sync Mode</span>
+                                        <span>Delayed Ledger</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t-2 border-ink bg-white px-6 py-12 lg:px-20 mt-auto">
+        <div class="mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <div class="size-6 bg-primary border-2 border-ink"></div>
+                <span class="font-black text-xl uppercase tracking-tighter">Offline UPI</span>
+            </div>
+            <div class="flex gap-8 text-sm font-black uppercase tracking-widest opacity-40">
+                <span>Resilient</span>
+                <span>Secure</span>
+                <span>Offline</span>
+            </div>
+        </div>
+    </footer>
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-paper flex flex-col items-center justify-center gap-8 p-10 border-b-2 border-ink">
+        <button class="absolute top-6 right-6" id="menu-close">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a class="nav-link text-2xl font-black uppercase" href="index.html#home" onclick="closeMenu()">Home</a>
+        <a class="nav-link text-2xl font-black uppercase" href="#top" onclick="closeMenu()">Features</a>
+        <a class="nav-link text-2xl font-black uppercase" href="#showcase" onclick="closeMenu()">Demo</a>
+        <a class="nav-link text-2xl font-black uppercase" href="index.html#legal" onclick="closeMenu()">Security</a>
+        <button class="btn-primary h-14 w-full text-lg font-black uppercase mt-4">Get Early Access</button>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', closeMenu);
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+
+</html>

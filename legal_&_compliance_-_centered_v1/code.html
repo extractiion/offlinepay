@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offline UPI - Legal &amp; Terms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2463eb",
+                        "background-light": "#FDFBF7", /* Warm paper background */
+                        "background-dark": "#111621",
+                        "paper-white": "#FFFFFF",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px", /* Sharp edges preferred */
+                        "sm": "2px",
+                        "lg": "4px",
+                        "xl": "8px",
+                        "full": "9999px",
+                    },
+                    boxShadow: {
+                        'retro': '4px 4px 0px 0px #000000',
+                        'retro-hover': '2px 2px 0px 0px #000000',
+                        'retro-card': '8px 8px 0px 0px rgba(36, 99, 235, 0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a retro feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7; 
+            border-left: 2px solid #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2463eb; 
+            border: 2px solid #000;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1d4ed8; 
+        }
+        
+        /* Pixel pattern overlay */
+        .bg-pixel-pattern {
+            background-image: radial-gradient(#111318 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.03;
+        }
+
+        /* Sharp focus states */
+        *:focus-visible {
+            outline: 2px solid #2463eb;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 font-display min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full bg-paper-white border-b-2 border-black">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary border-2 border-black flex items-center justify-center shadow-retro">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">wifi_off</span>
+</div>
+<h1 class="text-2xl font-black tracking-tight text-slate-900 uppercase">Offline UPI</h1>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-wide" href="#">Home</a>
+<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-wide" href="#">Features</a>
+<a class="text-sm font-bold text-primary transition-colors uppercase tracking-wide" href="#">Legal</a>
+</nav>
+<div class="hidden md:block">
+<button class="bg-primary hover:bg-blue-600 text-white text-sm font-bold py-2.5 px-5 border-2 border-black shadow-retro active:translate-x-[2px] active:translate-y-[2px] active:shadow-retro-hover transition-all uppercase tracking-wide">
+                    Download App
+                </button>
+</div>
+<button class="md:hidden p-2 text-black">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Grid -->
+<main class="relative flex-grow w-full max-w-7xl mx-auto px-6 py-12">
+<!-- Sidebar Navigation (Sticky) -->
+
+<!-- Document Content -->
+<div class="lg:col-span-9">
+<div class="bg-white border-2 border-black p-8 md:p-12 shadow-retro relative">
+<!-- Decorative corner accents -->
+<div class="absolute top-2 left-2 size-2 bg-black"></div>
+<div class="absolute top-2 right-2 size-2 bg-black"></div>
+<div class="absolute bottom-2 left-2 size-2 bg-black"></div>
+<div class="absolute bottom-2 right-2 size-2 bg-black"></div>
+<!-- Header -->
+<div class="border-b-2 border-slate-100 pb-8 mb-10" id="introduction">
+<div class="flex flex-col gap-2">
+<span class="bg-primary text-white text-xs font-bold px-2 py-1 uppercase tracking-wider w-fit border border-black shadow-[2px_2px_0px_0px_#000]">Legal Document</span>
+<h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mt-2">Legal &amp; Compliance</h1>
+<p class="text-slate-500 font-medium mt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history</span>
+                            Last updated: October 24, 2023
+                        </p>
+</div>
+<p class="mt-6 text-lg text-slate-700 leading-relaxed max-w-3xl">
+                        Transparency and security are at the core of our offline payment technology. This document outlines how we handle your data, the terms of using our offline capabilities, and your rights as a user.
+                    </p>
+</div>
+<!-- Section: Privacy Policy -->
+<section class="mb-12 scroll-mt-24" id="privacy">
+<h2 class="text-2xl font-black text-slate-900 mb-4 flex items-center gap-2 uppercase tracking-tight">
+<span class="text-primary">01.</span> Privacy Policy
+                    </h2>
+<div class="prose prose-slate max-w-none text-slate-700 font-medium">
+<p class="mb-4">
+                            At Offline UPI, we take your privacy seriously. We collect minimal data necessary to facilitate secure peer-to-peer transactions without an active internet connection.
+                        </p>
+<ul class="list-none pl-0 space-y-4 mb-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_box_outline_blank</span>
+<span><strong>Transaction Logs:</strong> We store a local encrypted log of your last 50 transactions on your device.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_box_outline_blank</span>
+<span><strong>Device Identity:</strong> We use a unique device fingerprint to authorize offline tokens.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_box_outline_blank</span>
+<span><strong>Audio/NFC Data:</strong> Proximity data is processed transiently and is never stored on our servers.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Section: Offline Architecture (Highlighted) -->
+<section class="mb-12 scroll-mt-24" id="offline-storage">
+<div class="bg-slate-50 border-2 border-black p-6 md:p-8 relative">
+<!-- Pixel Icon Decoration -->
+<div class="absolute -top-3 -right-3 bg-primary border-2 border-black text-white p-1 shadow-retro">
+<span class="material-symbols-outlined">wifi_lock</span>
+</div>
+<h2 class="text-xl font-black text-slate-900 mb-4 uppercase tracking-tight">
+<span class="text-primary">02.</span> Offline Storage Behavior
+                        </h2>
+<p class="text-slate-700 font-medium mb-4">
+                            Our unique "Store &amp; Sync" architecture ensures you can pay anywhere. Here is specifically how data behaves when your device is disconnected:
+                        </p>
+<div class="grid md:grid-cols-2 gap-4">
+<div class="bg-white border-2 border-black p-4">
+<h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">hourglass_top</span> 
+                                    Local Queuing
+                                </h4>
+<p class="text-sm text-slate-600">Transactions are cryptographically signed and queued in a secure enclave on your device storage.</p>
+</div>
+<div class="bg-white border-2 border-black p-4">
+<h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">sync_alt</span>
+                                    Auto-Sync
+                                </h4>
+<p class="text-sm text-slate-600">Once connectivity is restored (Wi-Fi or Cellular), the app automatically pushes the queue to the banking ledger.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Terms of Service -->
+<section class="mb-12 scroll-mt-24" id="terms">
+<h2 class="text-2xl font-black text-slate-900 mb-4 flex items-center gap-2 uppercase tracking-tight">
+<span class="text-primary">03.</span> Terms of Service
+                    </h2>
+<div class="text-slate-700 font-medium space-y-4">
+<p>
+                            By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app.
+                        </p>
+<h3 class="text-lg font-bold text-slate-900 mt-6 mb-2">Liability Limitations</h3>
+<p>
+                            Offline UPI is not liable for transaction failures caused by hardware malfunction of the user's device. While we ensure 99.9% sync accuracy, the user is responsible for maintaining device security (e.g., biometric locks).
+                        </p>
+<h3 class="text-lg font-bold text-slate-900 mt-6 mb-2">Merchant Agreements</h3>
+<p>
+                            Merchants accepting Offline UPI payments agree to honor the digital receipt generated at the point of sale, regardless of immediate settlement status.
+                        </p>
+</div>
+</section>
+<!-- Section: User Rights -->
+<section class="mb-12 scroll-mt-24" id="user-rights">
+<h2 class="text-2xl font-black text-slate-900 mb-4 flex items-center gap-2 uppercase tracking-tight">
+<span class="text-primary">04.</span> User Rights
+                    </h2>
+<p class="text-slate-700 font-medium mb-6">
+                        You retain full ownership of your financial data. In compliance with global data protection standards, you have the right to:
+                    </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex-1 min-w-[200px] border-l-4 border-primary pl-4 py-1">
+<h4 class="font-bold text-slate-900">Right to Access</h4>
+<p class="text-sm text-slate-600 mt-1">Request a full copy of your transaction history including offline logs.</p>
+</div>
+<div class="flex-1 min-w-[200px] border-l-4 border-primary pl-4 py-1">
+<h4 class="font-bold text-slate-900">Right to Delete</h4>
+<p class="text-sm text-slate-600 mt-1">Request complete deletion of your account and associated cloud data.</p>
+</div>
+</div>
+</section>
+<!-- Footer / Contact Section -->
+<section class="mt-16 pt-10 border-t-2 border-slate-100" id="contact">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<h3 class="text-xl font-black text-slate-900 mb-1">Still have questions?</h3>
+<p class="text-slate-600 font-medium">Our legal team is available Mon-Fri, 9am - 5pm EST.</p>
+</div>
+<div class="flex gap-4">
+<a class="flex items-center gap-2 bg-slate-900 text-white font-bold py-3 px-6 border-2 border-transparent hover:bg-white hover:text-slate-900 hover:border-black hover:shadow-retro transition-all" href="mailto:legal@offlineupi.com">
+<span class="material-symbols-outlined text-sm">mail</span>
+                                Email Legal
+                            </a>
+</div>
+</div>
+<div class="mt-8 p-4 bg-background-light border-2 border-slate-200 text-sm font-medium text-slate-500">
+<p>Offline UPI Headquarters</p>
+<p>42 Financial District Blvd, Suite 800, New York, NY 10005</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Global Footer -->
+<footer class="bg-white border-t-2 border-black py-12 mt-12">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-slate-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">wifi_off</span>
+</div>
+<span class="font-black text-slate-900 uppercase">Offline UPI</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">© 2023 Offline UPI Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+</svg>
+</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offline UPI - Features Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2463eb",
+              "background-light": "#fdfbf7", // Warm paper background
+              "background-dark": "#111621",
+              "paper-accent": "#f3eee5",
+              "ink": "#111318",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0px",
+              "none": "0px",
+              "sm": "0px",
+              "md": "0px",
+              "lg": "0px",
+              "xl": "0px",
+              "full": "0px", // Force sharp edges as requested
+            },
+            boxShadow: {
+                'hard': '4px 4px 0px 0px #111318',
+                'hard-sm': '2px 2px 0px 0px #111318',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for raw feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3eee5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #111318;
+            border: 2px solid #f3eee5;
+        }
+        /* Dotted background pattern for tech sections */
+        .bg-dots {
+            background-image: radial-gradient(#111318 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.05;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-ink font-body antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex w-full items-center justify-between border-b-2 border-ink bg-background-light px-6 py-4 lg:px-12">
+<div class="flex items-center gap-3">
+<div class="flex size-8 items-center justify-center bg-primary text-white">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</div>
+<h2 class="text-ink text-xl font-black uppercase tracking-tighter">Offline UPI</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-ink text-sm font-bold uppercase hover:text-primary transition-colors hover:underline decoration-2 underline-offset-4" href="#">Features</a>
+<a class="text-ink text-sm font-bold uppercase hover:text-primary transition-colors hover:underline decoration-2 underline-offset-4" href="#">Protocol</a>
+<a class="text-ink text-sm font-bold uppercase hover:text-primary transition-colors hover:underline decoration-2 underline-offset-4" href="#">Security</a>
+<a class="text-ink text-sm font-bold uppercase hover:text-primary transition-colors hover:underline decoration-2 underline-offset-4" href="#">Merchants</a>
+</nav>
+<button class="hidden md:flex h-10 items-center justify-center bg-ink px-6 text-white text-sm font-bold uppercase tracking-wide hover:bg-primary hover:shadow-hard-sm transition-all active:translate-y-[2px] active:shadow-none">
+                Get App
+            </button>
+<!-- Mobile Menu Button -->
+<button class="flex md:hidden text-ink">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="relative border-b-2 border-ink bg-background-light">
+<div class="absolute inset-0 bg-dots pointer-events-none"></div>
+<div class="container mx-auto px-6 py-16 lg:px-12 lg:py-24 flex flex-col items-center text-center relative z-10">
+<div class="mb-6 inline-flex items-center gap-2 border border-ink bg-white px-3 py-1 text-xs font-bold uppercase tracking-wider shadow-hard-sm">
+<span class="size-2 bg-green-500 block"></span>
+                    v2.0 Protocol Live
+                </div>
+<h1 class="max-w-4xl text-5xl font-black leading-[0.9] tracking-tighter text-ink md:text-7xl lg:text-8xl">
+                    PAYMENTS WITHOUT <span class="text-primary underline decoration-4 underline-offset-8 decoration-ink">INTERNET.</span>
+</h1>
+<p class="mt-8 max-w-2xl text-lg font-medium text-ink/80 md:text-xl leading-relaxed">
+                    The reliability of physical cash with the convenience of digital. Our offline-first protocol ensures transactions happen instantly, even in zero-network zones.
+                </p>
+<div class="mt-10 flex flex-wrap justify-center gap-4">
+<button class="h-14 min-w-[180px] bg-ink px-8 text-white text-base font-bold uppercase tracking-wide shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                        Start Now
+                    </button>
+<button class="h-14 min-w-[180px] border-2 border-ink bg-transparent px-8 text-ink text-base font-bold uppercase tracking-wide hover:bg-paper-accent transition-colors">
+                        Read Whitepaper
+                    </button>
+</div>
+</div>
+</section>
+<!-- Core Mechanics Grid -->
+
+<!-- Use Cases Section -->
+<!-- App Screenshots / Visual Proof -->
+<section class="border-b-2 border-ink bg-paper-accent lg:py-32 overflow-hidden relative py-32">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[400px]">qr_code_scanner</span>
+</div>
+<div class="container mx-auto px-6 lg:px-12 relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-black uppercase tracking-tighter md:text-5xl text-ink text-5xl md:text-7xl">Simple Interface.</h2>
+<h2 class="text-4xl font-black uppercase tracking-tighter md:text-5xl text-primary mt-2 text-5xl md:text-7xl">Complex Tech.</h2>
+</div>
+<div class="flex flex-wrap justify-center gap-8 lg:gap-16">
+<!-- Screen 1 -->
+<div class="bg-white border-2 border-ink p-2 shadow-hard transform rotate-[-2deg] hover:rotate-0 hover:z-10 hover:scale-105 transition-all duration-300 w-[320px]">
+<div class="w-full aspect-[9/16] border-2 border-ink bg-background-light flex flex-col relative overflow-hidden">
+<!-- Mock UI Header -->
+<div class="bg-ink p-3 flex justify-between items-center text-white">
+<span class="material-symbols-outlined text-sm">menu</span>
+<span class="text-xs font-bold tracking-wider">OFFLINE</span>
+<span class="material-symbols-outlined text-sm">wifi_off</span>
+</div>
+<!-- Mock UI Content -->
+<div class="flex-1 flex flex-col items-center justify-center p-4">
+<div class="size-32 border-4 border-ink p-1 mb-6 bg-white">
+<div class="w-full h-full bg-black pattern-dots"></div>
+</div>
+<div class="text-center">
+<div class="font-black text-2xl mb-1">SCAN TO PAY</div>
+<div class="text-xs font-bold text-gray-500 uppercase">Proximity: Ready</div>
+</div>
+</div>
+<!-- Mock UI Footer -->
+<div class="p-4 border-t-2 border-ink bg-white">
+<div class="h-10 bg-primary w-full border-2 border-ink flex items-center justify-center text-white font-bold text-xs uppercase">Generate Token</div>
+</div>
+</div>
+<p class="mt-3 text-center text-xs font-bold uppercase tracking-widest text-ink">Home Screen</p>
+</div>
+<!-- Screen 2 -->
+<div class="bg-white border-2 border-ink p-2 shadow-hard transform rotate-[1deg] hover:rotate-0 hover:z-10 hover:scale-105 transition-all duration-300 w-[320px]">
+<div class="w-full aspect-[9/16] border-2 border-ink bg-background-light flex flex-col relative overflow-hidden">
+<!-- Mock UI Header -->
+<div class="bg-white border-b-2 border-ink p-3 flex justify-between items-center text-ink">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="text-xs font-bold tracking-wider">PAYMENT</span>
+<div class="size-2 bg-green-500 rounded-full"></div>
+</div>
+<!-- Mock UI Content -->
+<div class="flex-1 flex flex-col p-6">
+<div class="text-4xl font-black mb-2">$24.00</div>
+<div class="text-sm font-bold text-gray-500 mb-8">To: Urban Coffee Roasters</div>
+<div class="border-2 border-ink bg-white p-3 mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined">bluetooth_searching</span>
+<div class="text-xs font-bold uppercase">Searching nearby...</div>
+</div>
+<div class="mt-auto">
+<div class="text-[10px] font-mono text-gray-400 mb-2">HASH: 8x92...a91</div>
+</div>
+</div>
+<!-- Mock UI Footer -->
+<div class="p-4 bg-ink">
+<div class="h-10 bg-white w-full border-2 border-white flex items-center justify-center text-ink font-bold text-xs uppercase">Slide to Pay</div>
+</div>
+</div>
+<p class="mt-3 text-center text-xs font-bold uppercase tracking-widest text-ink">Payment Flow</p>
+</div>
+<!-- Screen 3 -->
+<div class="bg-white border-2 border-ink p-2 shadow-hard transform rotate-[3deg] hover:rotate-0 hover:z-10 hover:scale-105 transition-all duration-300 w-[320px]">
+<div class="w-full aspect-[9/16] border-2 border-ink bg-green-500 flex flex-col relative overflow-hidden">
+<!-- Mock UI Content -->
+<div class="flex-1 flex flex-col items-center justify-center p-6 text-white">
+<div class="size-20 border-4 border-white bg-white text-green-500 flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-5xl font-bold">check</span>
+</div>
+<div class="text-3xl font-black uppercase italic mb-2">Success!</div>
+<div class="text-sm font-bold uppercase tracking-wide opacity-90 mb-8">Offline Transaction Recorded</div>
+<div class="w-full border-2 border-white bg-white/10 p-4 backdrop-blur-sm">
+<div class="flex justify-between text-xs font-bold uppercase mb-2">
+<span class="opacity-70">Amount</span>
+<span>$24.00</span>
+</div>
+<div class="flex justify-between text-xs font-bold uppercase">
+<span class="opacity-70">Mode</span>
+<span>BLE / Token</span>
+</div>
+</div>
+</div>
+<!-- Mock UI Footer -->
+<div class="p-4">
+<div class="h-10 bg-white w-full border-2 border-ink flex items-center justify-center text-ink font-bold text-xs uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">Done</div>
+</div>
+</div>
+<p class="mt-3 text-center text-xs font-bold uppercase tracking-widest text-ink">Confirmation</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<!-- Footer -->
+<footer class="bg-background-light border-t-2 border-ink py-12">
+<div class="container mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="flex size-6 items-center justify-center bg-ink text-white">
+<span class="material-symbols-outlined text-[14px]">qr_code_2</span>
+</div>
+<h2 class="text-ink text-lg font-black uppercase tracking-tighter">Offline UPI</h2>
+</div>
+<p class="text-sm font-medium text-ink/60 max-w-xs">
+                            © 2024 Offline UPI Inc.<br/>
+                            San Francisco, CA. Built for the world.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-8 text-sm font-bold uppercase tracking-wider text-ink">
+<a class="hover:text-primary" href="#">Twitter</a>
+<a class="hover:text-primary" href="#">GitHub</a>
+<a class="hover:text-primary" href="#">Discord</a>
+<a class="hover:text-primary" href="#">Legal</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
